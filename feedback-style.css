@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: white;
+  background-image: url(/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  margin: 2rem;
+}
+
+nav {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.logo img {
+  width: 140px;
+}
+
+#container-feedback {
+  width: 780px;
+  margin-inline: auto;
+}
+
+#feedback-title h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.feedback-subtitle {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.feedback-stars {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  letter-spacing: 0.6rem;
+}
+
+.write-open-feedback {
+  margin-top: 3rem;
+}
+
+#comment {
+  background-color: transparent;
+  border-style: none;
+  font-size: 1rem;
+}
+
+#comment:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.write-open-feedback hr {
+  color: #d20094;
+  background-color: #d20094;
+  border: solid 1px;
+  margin-top: 0.5rem;
+}
+
+#MoreInfoButton {
+  color: black;
+  background-color: #00ffff;
+  padding: 12px 45px;
+  border: none;
+  box-shadow: 0px 0px 10px 5px #00ffff81;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
