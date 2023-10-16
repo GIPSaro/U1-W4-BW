@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <header>
-      <nav id="epicode-logo" class="logo">
+    <main id="container">
+      <nav class="logo">
         <img src="./assets/epicode_logo.png" alt="Epicode logo" />
       </nav>
-    </header>
-    <main id="container">
       <div id="title">
         <h1>Welcome to <span>your exam</span></h1>
       </div>
@@ -24,22 +22,28 @@
           questions, so don't worry if you're unsure of a few of them.
         </p>
       </div>
-      <div id="list">
+      <div class="list">
         <ul>
-          <li>Each question is timed and can only be answered once.</li>
           <li>
-            Changing browser tab or opening other windows will invalidate the
-            question.
+            Each question is <span class="bold">timed</span> and can only be
+            <span class="bold">answered once</span>.
           </li>
-          <li>This exam will take approx. 0-5 minutes.</li>
+          <li>
+            Changing browser tab or opening other windows will
+            <span class="bold">invalidate the question</span>.
+          </li>
+          <li>
+            This exam will take approx. <span class="bold">0-5 minutes</span>.
+          </li>
         </ul>
       </div>
-      <input type="checkbox" id="checkboxAcceptance" />
-      <label for="checkboxAcceptance">
-        I promise to answer myself without help from anyone
-      </label>
-
-      <button id="proceedButton">PROCEED</button>
+      <div class="check">
+        <input type="checkbox" id="checkboxAcceptance" />
+        <label for="checkboxAcceptance">
+          I promise to answer myself without help from anyone
+        </label>
+        <div><button id="proceedButton" class="bold">PROCEED</button></div>
+      </div>
     </main>
     <script src="./script.js"></script>
   </body>
