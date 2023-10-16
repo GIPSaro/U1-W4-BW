@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: white;
+  background-image: url(/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  margin: 2rem;
+}
+
+header {
+  width: 780px;
+  margin-inline: auto;
+}
+
+nav {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.container {
+  margin-top: 2rem;
+  width: 780px;
+  margin-inline: auto;
+}
+
+header img {
+  width: 130px;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+#timer {
+  margin-top: 7px;
+  text-align: center;
+  line-height: 2.2rem;
+}
+
+#timer #seconds-running {
+  font-size: 4rem;
+}
+
+#timer span:first-child {
+  font-size: 0.88rem;
+}
+
+#timer span:last-child {
+  font-size: 0.75rem;
+}
+
+#timer span {
+  display: block;
+}
+
+.question {
+  width: 780px;
+  text-align: center;
+}
+
+.question h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.question h1 span {
+  display: block;
+}
+
+.answers {
+  margin-top: 4rem;
+  width: fit-content;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.answers button {
+  margin: 15px;
+  padding: 1rem 6.5rem;
+  border: 3px solid white;
+  background-color: #2a2954;
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+}
+
+.question-counter {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.question-counter h5 {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.accent-color {
+  color: #d20094;
+}
