@@ -38,13 +38,6 @@ header img {
   width: 130px;
 }
 
-.circle {
-  width: 120px;
-  height: 120px;
-  border: 1px solid white;
-  border-radius: 50%;
-}
-
 #timer {
   margin-top: 7px;
   text-align: center;
@@ -83,7 +76,7 @@ header img {
 }
 
 .answers {
-  margin-top: 4rem;
+  margin-top: 3rem;
   width: fit-content;
   text-align: center;
   margin-inline: auto;
@@ -91,8 +84,8 @@ header img {
 
 .answers button {
   margin: 15px;
-  padding: 1rem 6.5rem;
-  border: 3px solid white;
+  padding: 1.3rem 6.5rem;
+  border: 2px solid white;
   background-color: #2a2954;
   color: white;
   font-weight: 700;
@@ -100,7 +93,7 @@ header img {
 }
 
 .question-counter {
-  margin-top: 8rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
