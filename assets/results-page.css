@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+body {
+  color: white;
+  background-image: url(/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  margin: 2rem;
+}
+.logo img {
+  width: 160px;
+}
+.results {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+}
+.summary {
+  margin-top: 0;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  font-weight: normal;
+}
+.correct,
+.wrong {
+  font-size: 3.5rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.correct-result {
+  text-align: right;
+}
+.wrong-result {
+  text-align: right;
+}
+#percCorr,
+#percWrong {
+  font-size: 3.5em;
+  margin: 0;
+}
+.risp-corr,
+.risp-wrong {
+  margin: 0;
+}
+.congratulations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 3em;
+  justify-content: space-evenly;
+}
+.buttomContent {
+  text-align: center;
+}
+.rateus {
+  padding: 0.7em;
+  width: 170px;
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  font-size: large;
+  border: 1.5px solid white;
+  box-shadow: 0px 0px 20px 1px #0091ff2c;
+  text-align: center;
+}
