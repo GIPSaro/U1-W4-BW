@@ -85,7 +85,16 @@ nav{
 }
 
 .check input{
+  appearance: none;
+  border: 2px solid white;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
+  vertical-align: middle;
+}
+
+.check input:checked{
+  background-color: white;
 }
 
 .clickable-button{
