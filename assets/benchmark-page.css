@@ -101,12 +101,12 @@ header img {
   );
 }
 
-.question-counter {
+.counter-container {
   margin-top: 3rem;
   text-align: center;
 }
 
-.question-counter h5 {
+.counter-container h5 {
   font-weight: 400;
 }
 
@@ -191,4 +191,9 @@ header img {
   text-align: center;
   margin-top: -0.1rem;
   font-size: 3.2rem;
+}
+
+.ending-message {
+  display: inline-block;
+  margin-top: 6rem;
 }

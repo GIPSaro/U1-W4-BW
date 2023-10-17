@@ -232,114 +232,145 @@ window.onload = function () {
       .getElementById("base-timer-path-remaining")
       .setAttribute("stroke-dasharray", circleDasharray);
   }
-  //pesco una domanda random dalla lista
-  // const getRandomQuestion = function () {
-  //   const randomNumber = Math.floor(Math.random() * questions.length);
-  //   //console.log(randomNumber);
-  //   const question = questions[randomNumber];
-  //   return question;
-  // };
-
-  //imposto un punteggio globale dell'utente
-  let globalUserPoint = 0;
-
-  //imposto il counter di domande alla prima domanda
-  let questionNumber = 0;
-
-  //mostro a video a quale domanda siamo arrivati
-  const questionCounter = document.getElementById("question-counter");
-
-  const increaseCounterOfQuestions = function () {
-    questionCounter.innerText = questionNumber + 1;
-  };
-
-  const getQuestion = function () {
-    const question = questions[questionNumber];
-    return question;
-  };
-
-  console.log(questionNumber);
-
-  const questionInfo = getQuestion();
-  console.log(questionInfo);
-
-  //pesco il contenitore delle risposte
-  const answersContainer = document.getElementsByClassName("answers")[0];
-  console.log(answersContainer);
-
-  //appendo alla pagina la domanda dinamicamente
-  const appendQuestionToPage = function (questionInfo) {
-    //svuoto il container di answer
-    answersContainer.innerText = "";
-    //pesco la domanda dall'array di domande
-    const questionToAppend = questionInfo.question;
-
-    //mostro la domanda
-    const questionHtml = document.getElementById("question");
-    questionHtml.innerText = questionToAppend;
-    //console.log(questionToAppend);
-
-    //pesco la risposta corretta
-    const correctAnswer = questionInfo.correct_answer;
-    //console.log(correctAnswer);
-
-    //creo il bottone che conterrà la risposta corretta e gli do un id
-    const correctAnswerButton = document.createElement("button");
-    correctAnswerButton.setAttribute("id", "correctAnswer");
-    correctAnswerButton.innerText = correctAnswer;
-    //appendo il bottone con la risposta al contenitore di risposte
-    answersContainer.appendChild(correctAnswerButton);
-
-    //pesco le risposte errate e appendo le risposte errate al contenitore di risposte
-    const incorrect_answers = questionInfo.incorrect_answers;
-    incorrect_answers.forEach((element) => {
-      const wrongAnswer = document.createElement("button");
-      wrongAnswer.setAttribute("id", "wrongAnswer");
-      wrongAnswer.innerText = element;
-      answersContainer.appendChild(wrongAnswer);
-    });
-    return correctAnswer;
-  };
-
   appendQuestionToPage(questionInfo);
+};
+//pesco una domanda random dalla lista
+// const getRandomQuestion = function () {
+//   const randomNumber = Math.floor(Math.random() * questions.length);
+//   //console.log(randomNumber);
+//   const question = questions[randomNumber];
+//   return question;
+// };
 
-  //spostarsi sulla nuova domanda
-  const goToNewQuestion = function () {
-    questionNumber++;
-    console.log(questionNumber);
+//imposto un punteggio globale dell'utente
+let globalUserPoint = 0;
+
+//imposto il counter di domande alla prima domanda
+let questionNumber = 0;
+
+//mostro a video a quale domanda siamo arrivati
+const questionCounter = document.getElementById("question-counter");
+
+const increaseCounterOfQuestions = function () {
+  questionCounter.innerText = questionNumber + 1;
+};
+
+const getQuestion = function () {
+  const question = questions[questionNumber];
+  return question;
+};
+
+//console.log(questionNumber);
+
+const questionInfo = getQuestion();
+//console.log(questionInfo);
+
+//pesco il contenitore dei counter delle domande
+const counterContainer =
+  document.getElementsByClassName("counter-container")[0];
+
+//pesco il contenitore del timer
+const timerContainer = document.getElementById("timer");
+
+//pesco il contenitore delle risposte
+const answersContainer = document.getElementsByClassName("answers")[0];
+//console.log(answersContainer);
+
+//appendo alla pagina la domanda dinamicamente
+const appendQuestionToPage = function (questionInfo) {
+  //svuoto il container di answer
+  answersContainer.innerText = "";
+  //pesco la domanda dall'array di domande
+  const questionToAppend = questionInfo.question;
+
+  //mostro la domanda
+  const questionHtml = document.getElementById("question");
+  questionHtml.innerText = questionToAppend;
+  //console.log(questionToAppend);
+
+  //pesco la risposta corretta
+  const correctAnswer = questionInfo.correct_answer;
+  //console.log(correctAnswer);
+
+  //creo il bottone che conterrà la risposta corretta e gli do un id
+  const correctAnswerButton = document.createElement("button");
+  correctAnswerButton.setAttribute("id", "correctAnswer");
+  correctAnswerButton.innerText = correctAnswer;
+  //appendo il bottone con la risposta al contenitore di risposte
+  answersContainer.appendChild(correctAnswerButton);
+
+  //pesco le risposte errate e appendo le risposte errate al contenitore di risposte
+  const incorrect_answers = questionInfo.incorrect_answers;
+  incorrect_answers.forEach((element) => {
+    const wrongAnswer = document.createElement("button");
+    wrongAnswer.setAttribute("id", "wrongAnswer");
+    wrongAnswer.innerText = element;
+    answersContainer.appendChild(wrongAnswer);
+  });
+  return correctAnswer;
+};
+
+//mostra pagina del risultati
+const showResultsPage = function () {
+  const questionContainer =
+    document.getElementsByClassName("question-container")[0];
+
+  //console.log(questionContainer);
+
+  //console.log("SONO QUI");
+  answersContainer.innerHTML = "";
+  questionContainer.innerHTML = "";
+  counterContainer.innerHTML = "";
+  timerContainer.style.display = "none";
+  //console.log("HO PULITO");
+
+  const resultsOfQuiz = document.createElement("div");
+  resultsOfQuiz.innerHTML = `<h1>Hai finito il quiz con un punteggio di ${globalUserPoint} su 10!</h1>`;
+  resultsOfQuiz.classList.add("ending-message");
+  questionContainer.appendChild(resultsOfQuiz);
+};
+
+//spostarsi sulla nuova domanda
+const goToNewQuestion = function () {
+  questionNumber++;
+  //console.log("Question number" + questionNumber + "===" + questions.length);
+  if (questionNumber > questions.length - 1) {
+    //console.log(questionNumber);
+    showResultsPage();
+  } else {
     appendQuestionToPage(getQuestion());
     increaseCounterOfQuestions();
-  };
-
-  //selezione della risposta
-  const selectAnswerAndChangeButtonColor = function (element) {
-    //check per vedere se ci sono altre risposte che sono già selezionate
-    //e le deseleziono
-    const allSelectedAnswers = document.querySelectorAll(".selectedAnswer");
-    //console.log(allSelectedAnswers);
-    allSelectedAnswers.forEach((element) => {
-      element.classList.remove("selectedAnswer");
-    });
-    //seleziono la risposta cliccata
-    element.classList.add("selectedAnswer");
-    console.log("Hai selezionato la risposta", element.innerText);
-  };
-
-  const checkIfTheAnswerIsCorrect = function (element) {
-    // console.log(element.innerText);
-    // console.log(correctAnswer.innerText);
-    if (element.innerText === correctAnswer.innerText) {
-      globalUserPoint++;
-      console.log("Risposta corretta!");
-    } else {
-      console.log("Risposta errata");
-    }
-    goToNewQuestion();
-  };
-
-  answersContainer.addEventListener("click", (e) => {
-    const element = e.target;
-    selectAnswerAndChangeButtonColor(element);
-    checkIfTheAnswerIsCorrect(element);
-  });
+  }
 };
+
+//selezione della risposta
+const selectAnswerAndChangeButtonColor = function (element) {
+  //check per vedere se ci sono altre risposte che sono già selezionate
+  //e le deseleziono
+  const allSelectedAnswers = document.querySelectorAll(".selectedAnswer");
+  //console.log(allSelectedAnswers);
+  allSelectedAnswers.forEach((element) => {
+    element.classList.remove("selectedAnswer");
+  });
+  //seleziono la risposta cliccata
+  element.classList.add("selectedAnswer");
+  console.log("Hai selezionato la risposta", element.innerText);
+};
+
+const checkIfTheAnswerIsCorrect = function (element) {
+  // console.log(element.innerText);
+  // console.log(correctAnswer.innerText);
+  if (element.innerText === correctAnswer.innerText) {
+    globalUserPoint++;
+    console.log("Risposta corretta!");
+  } else {
+    console.log("Risposta errata");
+  }
+  goToNewQuestion();
+};
+
+answersContainer.addEventListener("click", (e) => {
+  const element = e.target;
+  selectAnswerAndChangeButtonColor(element);
+  checkIfTheAnswerIsCorrect(element);
+});
