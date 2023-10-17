@@ -1,5 +1,24 @@
-let torta = document.querySelector(".torta");
-torta.style.background = `conic-gradient(#D20094 ${corner}deg, #00ffff ${corner}deg)`;
+let data = 3;
+let dataWrong = 10 - data;
+if (data == null) {
+  data = 0;
+}
+//console.log(data);
+
+function percent(partialValue, totalValue) {
+  return (partialValue / totalValue) * 100;
+}
+function percentWrong(partialValue, totalValue) {
+  return [(totalValue - partialValue) / totalValue] * 100;
+}
+console.log(percent(2, 10));
+
+document.getElementById("percCorr").innerHTML = percent(data, 10) + "%";
+//document.getElementById("numCorr").innerHTML = data;
+document.getElementById("percWrong").innerHTML = percentWrong(data, 10) + "%";
+document.getElementById("numwrong").innerHTML = dataWrong;
+
+//qui bisonga impostare l'angolo del colore del grafico in base al risultato
 
 let result = document.querySelector("#torta-testo");
 function stampaResult(partialValue) {
@@ -35,3 +54,4 @@ function stampaResult(partialValue) {
     result.appendChild(print1);
   }
 }
+stampaResult(percent(data, 10));
