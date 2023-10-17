@@ -1,6 +1,5 @@
 let torta = document.querySelector(".torta");
-torta.style.background =
-  "conic-gradient(#D20094 ${angolo}deg, #00ffff ${angolo}deg";
+torta.style.background = `conic-gradient(#D20094 ${corner}deg, #00ffff ${corner}deg)`;
 
 let result = document.querySelector("#torta-testo");
 function stampaResult(partialValue) {

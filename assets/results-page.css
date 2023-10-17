@@ -32,6 +32,7 @@ body {
   letter-spacing: 0.1rem;
   text-align: center;
   font-weight: normal;
+  font-size: 1.5rem;
 }
 .correct,
 .wrong {
@@ -66,17 +67,30 @@ body {
   margin: 0;
 }
 .torta {
-  width: 360px;
   text-align: center;
-
   position: absolute;
-  top: 50%;
   left: 43%;
-  margin-top: -100px;
+  margin-top: -160px;
   margin-left: -100px;
+  border-radius: 50%;
+  background: conic-gradient(#d20094 180deg, #00ffff 180deg);
+  height: 360px;
+  width: 360px;
+}
+.torta::before {
+  content: "";
+  position: absolute;
+  height: 75%;
+  width: 75%;
+  left: 45px;
+  bottom: 49px;
+  border-radius: 50%;
+  background-color: #070c2f;
 }
 .buttomCont {
   text-align: center;
+  position: relative;
+  top: 57px;
 }
 .rateus {
   padding: 0.7em;
@@ -87,6 +101,7 @@ body {
   font-size: large;
   border: 1.5px solid white;
   box-shadow: 0px 0px 20px 1px #0091ff2c;
+  cursor: pointer;
 }
 #you-passed {
   color: #00ffff;
@@ -95,11 +110,9 @@ body {
 .contResult {
   margin: 0px;
 }
-.torta-testo {
-  text-align: center;
-  display: block;
-  position: absolute;
-  top: 18%;
+#torta-testo {
+  position: relative;
+  top: 90px;
 }
 
 #torta-testo p {
