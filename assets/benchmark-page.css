@@ -29,7 +29,6 @@ nav {
 }
 
 .container {
-  margin-top: 2rem;
   width: 780px;
   margin-inline: auto;
 }
@@ -38,18 +37,18 @@ header img {
   width: 130px;
 }
 
-.question {
+.question-container {
   width: 780px;
   text-align: center;
 }
 
-.question h1 {
+.question-container h1 {
   font-family: "Outfit", sans-serif;
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
-.question h1 span {
+.question-container h1 span {
   display: block;
 }
 
@@ -58,16 +57,48 @@ header img {
   width: fit-content;
   text-align: center;
   margin-inline: auto;
+  pointer-events: none;
 }
 
 .answers button {
   margin: 15px;
-  padding: 1.3rem 6.5rem;
+  width: 300px;
+  height: 5rem;
   border: 2px solid white;
-  background-color: #2a2954;
+  background-color: #2a295486;
   color: white;
   font-weight: 700;
   border-radius: 50px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.answers button:hover {
+  background: linear-gradient(
+    180deg,
+    hsla(318, 100%, 41%, 0.7) 0%,
+    hsla(307, 100%, 28%, 0.7) 100%
+  );
+}
+
+.answers .button {
+  margin: 15px;
+  width: 300px;
+  height: 5rem;
+  border: 2px solid white;
+  background-color: #2a295486;
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.selectedAnswer {
+  background: linear-gradient(
+    180deg,
+    hsla(318, 100%, 41%, 0.7) 0%,
+    hsla(307, 100%, 28%, 0.7) 100%
+  );
 }
 
 .question-counter {
@@ -88,7 +119,8 @@ header img {
 }
 
 #timer {
-  margin-top: 7px;
+  margin-bottom: 2.5rem;
+  margin-top: -2rem;
   line-height: 2.2rem;
   text-align: right;
 }
@@ -99,13 +131,14 @@ header img {
 
 #timer #seconds {
   margin-top: -8.5rem;
-  margin-right: 2.3rem;
+  margin-right: 3rem;
+  font-size: 0.7rem;
 }
 
 #timer #remaining-text {
   margin-top: -7rem;
-  margin-right: 2.5rem;
-  font-size: 0.8rem;
+  margin-right: 2.85rem;
+  font-size: 0.65rem;
 }
 
 .base-timer {
@@ -127,6 +160,7 @@ header img {
 .base-timer__path-elapsed {
   stroke-width: 7px;
   stroke: grey;
+  opacity: 0.4;
 }
 
 .base-timer__path-remaining {
@@ -136,7 +170,7 @@ header img {
   transform-origin: center;
   transition: 1s linear all;
   fill-rule: nonzero;
-  stroke: currentColor;
+  stroke: #00ffff;
 }
 
 .base-timer__path-remaining.green {
@@ -155,6 +189,6 @@ header img {
   width: 150px;
   height: 150px;
   text-align: center;
-  margin-top: -0.5rem;
-  font-size: 2rem;
+  margin-top: -0.1rem;
+  font-size: 3.2rem;
 }

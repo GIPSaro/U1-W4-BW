@@ -13,17 +13,19 @@
     <main class="container">
       <div id="timer"></div>
 
-      <div class="question">
-        <h1>How can I create a <span class="bold">checkbox in HTML?</span></h1>
+      <div class="question-container">
+        <h1 id="question">
+          How can I create a <span class="bold">checkbox in HTML?</span>
+        </h1>
       </div>
-      <div class="answers">
-        <button id="answer1">Risposta 1</button>
-        <button id="answer2">Risposta 2</button>
-        <button id="answer3">Risposta 3</button>
-        <button id="answer4">Risposta 4</button>
-      </div>
+
+      <div class="answers"></div>
+
       <div class="question-counter">
-        <h5>QUESTION 1 <span class="accent-color">/ 10</span></h5>
+        <h5>
+          QUESTION <span id="question-counter">1</span>
+          <span class="accent-color">/ 10</span>
+        </h5>
       </div>
     </main>
     <script src="./benchmark-page.js"></script>
