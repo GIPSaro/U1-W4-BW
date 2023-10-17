@@ -118,3 +118,31 @@ nav {
 .bold {
   font-weight: bold;
 }
+
+#container-feedback {
+  width: 780px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+h1 #container-feedback {
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  font-weight: bold;
+}
+
+div .feedback-stars {
+}
+p .feedback-subtitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+}
+form {
+  outline: none;
+}
+
+hr {
+  width: 15rem;
+  color: #d20094;
+}
