@@ -38,6 +38,7 @@ nav {
   font-size: 50px;
   font-weight: 700;
   text-align: center;
+  margin-top: 5rem;
 }
 
 .feedback-subtitle {
@@ -48,9 +49,47 @@ nav {
 
 .feedback-stars {
   margin-top: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   text-align: center;
   letter-spacing: 0.6rem;
+}
+
+.feedback-stars > input {
+  display: none;
+}
+
+.feedback-stars > label::before {
+  content: url(./assets/star.svg);
+  margin: 2px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.feedback-stars > .half::before {
+  content: url(./assets/star.svg);
+  position: absolute;
+  cursor: pointer;
+}
+
+.feedback-stars > label {
+  filter: invert(89%) sepia(87%) saturate(228%) hue-rotate(181deg)
+    brightness(9%) contrast(90%);
+  cursor: pointer;
+}
+
+.feedback-stars > input:checked ~ label,
+.feedback-stars:not(:checked) > label:hover,
+.feedback-stars:not(:checked) > label:hover ~ label {
+  filter: invert(100%) sepia(54%) saturate(7499%) hue-rotate(105deg)
+    brightness(123%) contrast(103%);
+}
+
+.feedback-stars > input:checked + label:hover,
+.feedback-stars > input:checked ~ label:hover,
+.feedback-stars > label:hover ~ input:checked ~ label,
+.feedback-stars > input:checked ~ label:hover ~ label {
+  filter: invert(100%) sepia(54%) saturate(7499%) hue-rotate(105deg)
+    brightness(123%) contrast(103%);
 }
 
 .write-open-feedback {
@@ -63,10 +102,13 @@ nav {
   font-size: 1rem;
 }
 
-#comment:focus,
-textarea:focus,
-select:focus {
+#comment {
   outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  margin-left: 4.5rem;
 }
 
 .write-open-feedback hr {
@@ -74,15 +116,33 @@ select:focus {
   background-color: #d20094;
   border: solid 1px;
   margin-top: 0.5rem;
+  margin-left: 3rem;
+  margin-right: 2.5rem;
 }
 
 #MoreInfoButton {
   color: black;
   background-color: #00ffff;
-  padding: 12px 45px;
+  padding: 15px 45px;
   border: none;
-  box-shadow: 0px 0px 10px 5px #00ffff81;
+  box-shadow: 0px 0px 20px 10px #00b7ff9d;
   font-size: 1rem;
   cursor: pointer;
   font-weight: bold;
+}
+
+#buttonContainer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#MoreInfoButton:hover {
+  letter-spacing: 1px;
+}
+
+#rating-value {
+  width: 100%;
+  margin: 40px auto 0;
+  padding: 10px 5px;
+  text-align: right;
 }
