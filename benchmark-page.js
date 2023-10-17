@@ -295,15 +295,28 @@ const appendQuestionToPage = function (questionInfo) {
   //creo il bottone che conterrà la risposta corretta e gli do un id
   const correctAnswerButton = document.createElement("button");
   correctAnswerButton.setAttribute("id", "correctAnswer");
+  correctAnswerButton.style.display = "none";
   correctAnswerButton.innerText = correctAnswer;
   //appendo il bottone con la risposta al contenitore di risposte
   answersContainer.appendChild(correctAnswerButton);
 
   //pesco le risposte errate e appendo le risposte errate al contenitore di risposte
   const incorrect_answers = questionInfo.incorrect_answers;
+
+  //inserisco la risposta corretta nell'array delle risposte sbagliate
+  //in un punto random dell'array
+  console.log(incorrect_answers);
+  console.log(correctAnswer);
+  const correctAnswerPosition = Math.floor(
+    Math.random() * incorrect_answers.length
+  );
+  incorrect_answers.splice(correctAnswerPosition, 0, correctAnswer);
+  console.log(incorrect_answers);
+  console.log(correctAnswerPosition);
+
   incorrect_answers.forEach((element) => {
     const wrongAnswer = document.createElement("button");
-    wrongAnswer.setAttribute("id", "wrongAnswer");
+    wrongAnswer.classList.add("answer");
     wrongAnswer.innerText = element;
     answersContainer.appendChild(wrongAnswer);
   });
@@ -360,6 +373,7 @@ const selectAnswerAndChangeButtonColor = function (element) {
 const checkIfTheAnswerIsCorrect = function (element) {
   // console.log(element.innerText);
   // console.log(correctAnswer.innerText);
+  console.log("riga 375", correctAnswer);
   if (element.innerText === correctAnswer.innerText) {
     globalUserPoint++;
     console.log("Risposta corretta!");
