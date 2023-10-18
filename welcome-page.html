@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./assets/css/welcome-page.css" />
+  </head>
+  <body>
+    <main id="container">
+      <nav class="logo">
+        <img src="./assets/epicode_logo.png" alt="Epicode logo" />
+      </nav>
+      <div id="title">
+        <h1>Welcome to <span>your exam</span></h1>
+      </div>
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+          <br />
+          questions, so don't worry if you're unsure of a few of them.
+        </p>
+      </div>
+      <div class="list">
+        <ul>
+          <li>
+            Each question is <span class="bold">timed</span> and can only be
+            <span class="bold">answered once</span>.
+          </li>
+          <li>
+            Changing browser tab or opening other windows will
+            <span class="bold">invalidate the question</span>.
+          </li>
+          <li>
+            This exam will take approx. <span class="bold">0-5 minutes</span>.
+          </li>
+        </ul>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="checkboxAcceptance" />
+        <label for="checkboxAcceptance">
+          I promise to answer myself without help from anyone
+        </label>
+        <div>
+          <a href="./benchmark-page.html"
+            ><button id="proceedButton" class="bold">PROCEED</button></a
+          >
+        </div>
+      </div>
+    </main>
+    <script src="./welcome-page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: white;
+  background-image: url(/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  margin: 2rem;
+}
+
+header {
+  width: 780px;
+  margin-inline: auto;
+}
+
+nav {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.container {
+  width: 780px;
+  margin-inline: auto;
+}
+
+header img {
+  width: 130px;
+}
+
+.question-container {
+  width: 780px;
+  text-align: center;
+}
+
+.question-container h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.question-container h1 span {
+  display: block;
+}
+
+.answers {
+  margin-top: 3rem;
+  width: fit-content;
+  text-align: center;
+  margin-inline: auto;
+  pointer-events: none;
+}
+
+.answers button {
+  margin: 15px;
+  width: 300px;
+  height: 5rem;
+  border: 2px solid white;
+  background-color: #2a295486;
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.answers button:hover {
+  background: linear-gradient(
+    180deg,
+    hsla(318, 100%, 41%, 0.7) 0%,
+    hsla(307, 100%, 28%, 0.7) 100%
+  );
+}
+
+.answers .button {
+  margin: 15px;
+  width: 300px;
+  height: 5rem;
+  border: 2px solid white;
+  background-color: #2a295486;
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.selectedAnswer {
+  background: linear-gradient(
+    180deg,
+    hsla(318, 100%, 41%, 0.7) 0%,
+    hsla(307, 100%, 28%, 0.7) 100%
+  );
+}
+
+.counter-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.counter-container h5 {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.accent-color {
+  color: #d20094;
+}
+
+#timer {
+  margin-bottom: 2.5rem;
+  margin-top: -2rem;
+  line-height: 2.2rem;
+  text-align: right;
+}
+
+#timer span {
+  display: block;
+}
+
+#timer #seconds {
+  margin-top: -8.5rem;
+  margin-right: 3rem;
+  font-size: 0.7rem;
+}
+
+#timer #remaining-text {
+  margin-top: -7rem;
+  margin-right: 2.85rem;
+  font-size: 0.65rem;
+}
+
+.base-timer {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+  opacity: 0.4;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: #00ffff;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin-top: -0.1rem;
+  font-size: 3.2rem;
+}
+
+.ending-message {
+  display: inline-block;
+  margin-top: 6rem;
+}

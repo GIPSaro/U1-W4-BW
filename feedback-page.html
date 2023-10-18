@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./assets/css/feedback-style.css" />
+  </head>
+  <body>
+    <main id="container-feedback">
+      <nav class="logo">
+        <img src="./assets/epicode_logo.png" alt="Epicode logo" />
+      </nav>
+      <div id="feedback-title">
+        <h1>Tell us how it’s going</h1>
+      </div>
+      <div class="feedback-subtitle">
+        <p>
+          From 0 to 10, how likely are you to recommend EPICODE <br />
+          to a friend or a colleague?
+        </p>
+      </div>
+      <div class="container">
+        <div class="feedback-stars">
+          <input type="radio" id="star10" name="rating" value="10" />
+          <label for="star10" class="full"></label>
+
+          <input type="radio" id="star9" name="rating" value="9" />
+          <label for="star9" class="full"></label>
+
+          <input type="radio" id="star8" name="rating" value="8" />
+          <label for="star8" class="full"></label>
+
+          <input type="radio" id="star7" name="rating" value="7" />
+          <label for="star7" class="full"></label>
+
+          <input type="radio" id="star6" name="rating" value="6" />
+          <label for="star6" class="full"></label>
+
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5" class="full"></label>
+
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4" class="full"></label>
+
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3" class="full"></label>
+
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2" class="full"></label>
+
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1" class="full"></label>
+
+          <h4 id="rating-value"></h4>
+        </div>
+      </div>
+      <div class="feedback-subtitle">
+        <p>Leave us an open feedback about your experience so far</p>
+      </div>
+      <div class="write-open-feedback">
+        <form id="feedback-comment">
+          <input
+            type="text"
+            id="comment"
+            placeholder="Write your comment here"
+          />
+        </form>
+        <hr />
+      </div>
+
+      <div id="buttonContainer">
+        <button id="MoreInfoButton" type="submit">
+          <a
+            href="https://epicode.com/it/?utm_source=adwords&utm_campaign=Brand&utm_adgroup=brandexact&utm_term=epicode&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=11897141170&hsa_grp=115607542236&hsa_ad=639941169967&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw4bipBhCyARIsAFsieCwTWf15kzyosydh4Rwe7jAiz3ps2c9MORPp6rokMK0xyujXqHjtEWUaAg1ZEALw_wcB"
+            target="_blank"
+            >MORE INFO</a
+          >
+        </button>
+      </div>
+      <script src="./feedback-page.js"></script>
+    </main>
+  </body>
+</html>

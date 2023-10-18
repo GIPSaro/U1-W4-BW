@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/results-page.css" />
+    <title>Results-Page</title>
+  </head>
+  <body>
+    <header class="logo">
+      <img src="./assets/epicode_logo.png" alt="logo epicode" />
+    </header>
+    <main class="container">
+      <h1 class="results">Results</h1>
+      <h3 class="summary">The summary of your answers:</h3>
+      <div class="contResult">
+        <div class="contResult-child">
+          <div class="correct-result">
+            <h1 class="correct">Correct</h1>
+            <h1 id="percCorr"></h1>
+            <p class="risp-corr"><span id="numCorr"></span>/10 questions</p>
+          </div>
+        </div>
+
+        <div class="contResult-child">
+          <div class="torta-container">
+            <div class="torta">
+              <span id="torta-testo">
+                <h3></h3>
+                <h3 id="you-passed"></h3>
+                <p></p>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contResult-child">
+          <div class="wrong-result">
+            <h1 class="wrong">Wrong</h1>
+            <h1 id="percWrong"></h1>
+            <p class="risp-wrong"><span id="numWrong"></span>/10 questions</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="buttomCont">
+      <a href="./feedback-page.html"
+        ><button class="rateus"><b>RATE US</b></button></a
+      >
+    </div>
+    <script src="./results-page.js"></script>
+  </body>
+</html>
