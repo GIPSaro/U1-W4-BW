@@ -114,9 +114,9 @@ const questions = [
 
 // BUON LAVORO 💪🚀
 
-//TIMER
 window.onload = function () {
   appendQuestionToPage(questionInfo);
+  startTimer();
 };
 //timer
 const FULL_DASH_ARRAY = 283;
@@ -137,7 +137,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 60;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -169,8 +169,7 @@ document.getElementById("timer").innerHTML = `
 </div>
 `;
 
-startTimer();
-
+//quando il tempo finisce azzera il timer e vai alla prossima domanda
 function onTimesUp() {
   clearInterval(timerInterval);
   goToNewQuestion();
@@ -180,9 +179,8 @@ function startTimer() {
   timerInterval = setInterval(() => {
     timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
-    const timerContainer = (document.getElementById(
-      "base-timer-label"
-    ).innerHTML = formatTime(timeLeft));
+    document.getElementById("base-timer-label").innerHTML =
+      formatTime(timeLeft);
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
@@ -299,14 +297,14 @@ const appendQuestionToPage = function (questionInfo) {
 
   //inserisco la risposta corretta nell'array delle risposte sbagliate
   //in un punto random dell'array
-  console.log(incorrect_answers);
-  console.log(correctAnswer);
+  // console.log(incorrect_answers);
+  // console.log(correctAnswer);
   const correctAnswerPosition = Math.floor(
     Math.random() * incorrect_answers.length
   );
   incorrect_answers.splice(correctAnswerPosition, 0, correctAnswer);
-  console.log(incorrect_answers);
-  console.log(correctAnswerPosition);
+  // console.log(incorrect_answers);
+  // console.log(correctAnswerPosition);
 
   incorrect_answers.forEach((element) => {
     const wrongAnswer = document.createElement("button");
@@ -339,10 +337,10 @@ const showResultsPage = function () {
 
 //spostarsi sulla nuova domanda
 const goToNewQuestion = function () {
+  //resetto il timer prima ad ogni domanda
   console.log("Reset TIMER");
   clearInterval(timerInterval);
   questionNumber++;
-  //console.log("Question number" + questionNumber + "===" + questions.length);
   if (questionNumber > questions.length - 1) {
     //console.log(questionNumber);
     showResultsPage();
@@ -374,9 +372,9 @@ const checkIfTheAnswerIsCorrect = function (element) {
   // console.log(correctAnswer.innerText);
   if (element.innerText === correctAnswer.innerText) {
     globalUserPoint++;
-    console.log("Risposta corretta!");
+    //console.log("Risposta corretta!");
   } else {
-    console.log("Risposta errata");
+    //console.log("Risposta errata");
   }
   goToNewQuestion();
 };
@@ -386,7 +384,3 @@ answersContainer.addEventListener("click", (e) => {
   selectAnswerAndChangeButtonColor(element);
   checkIfTheAnswerIsCorrect(element);
 });
-
-const myTimeout = setTimeout(myGreeting, TIME_LIMIT * 1000);
-
-timerContainer.addEventListener("change", function () {});
