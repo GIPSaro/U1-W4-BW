@@ -317,22 +317,26 @@ const appendQuestionToPage = function (questionInfo) {
 
 //mostra pagina del risultati
 const showResultsPage = function () {
-  const questionContainer =
-    document.getElementsByClassName("question-container")[0];
+  const url = "./results-page.html";
+  localStorage.setItem("globalUserPoint", globalUserPoint);
+  window.location.href = url;
 
-  //console.log(questionContainer);
+  // const questionContainer =
+  //   document.getElementsByClassName("question-container")[0];
 
-  //console.log("SONO QUI");
-  answersContainer.innerHTML = "";
-  questionContainer.innerHTML = "";
-  counterContainer.innerHTML = "";
-  timerContainer.style.display = "none";
-  //console.log("HO PULITO");
+  // //console.log(questionContainer);
 
-  const resultsOfQuiz = document.createElement("div");
-  resultsOfQuiz.innerHTML = `<h1>Hai finito il quiz con un punteggio di ${globalUserPoint} su 10!</h1>`;
-  resultsOfQuiz.classList.add("ending-message");
-  questionContainer.appendChild(resultsOfQuiz);
+  // //console.log("SONO QUI");
+  // answersContainer.innerHTML = "";
+  // questionContainer.innerHTML = "";
+  // counterContainer.innerHTML = "";
+  // timerContainer.style.display = "none";
+  // //console.log("HO PULITO");
+
+  // const resultsOfQuiz = document.createElement("div");
+  // resultsOfQuiz.innerHTML = `<h1>Hai finito il quiz con un punteggio di ${globalUserPoint} su 10!</h1>`;
+  // resultsOfQuiz.classList.add("ending-message");
+  // questionContainer.appendChild(resultsOfQuiz);
 };
 
 //spostarsi sulla nuova domanda

@@ -1,4 +1,6 @@
-let data = 3;
+const globalUserPoint = localStorage.getItem("globalUserPoint");
+
+let data = globalUserPoint;
 let dataWrong = 10 - data;
 if (data == null) {
   data = 0;
@@ -52,7 +54,7 @@ function stampaResult(partialValue) {
     print3.appendChild(print4);
     let newP = document.createElement("p");
     let print5 = document.createTextNode(
-      "We'll send you the certificate in few minuntes. Check your email(including promotions/spam folder)"
+      "Don't give up, keep studying and practicing until you reach your goal"
     );
     newP.appendChild(print5);
     print3.appendChild(newP);
