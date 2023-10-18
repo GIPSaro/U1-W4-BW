@@ -197,3 +197,53 @@ header img {
   display: inline-block;
   margin-top: 6rem;
 }
+
+/* EXTRA */
+
+#alertMessageForAnswer {
+  font-family: "Outfit", sans-serif;
+  display: inline-block;
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  position: fixed;
+  bottom: 2rem;
+  animation-name: enterOnPage;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+}
+
+@keyframes enterOnPage {
+  0%,
+  100% {
+    opacity: 0;
+    right: 0px;
+  }
+  50% {
+    opacity: 1;
+    right: 3rem;
+  }
+}
+
+.popup-text {
+  margin-top: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.correct-popup {
+  background-color: #00ffff60;
+  color: #00ffff;
+  border-left: 5px solid #00ffff;
+  outline: 1px solid #00ffff;
+}
+
+.wrong-popup {
+  background-color: #d2009470;
+  color: #ff00b3;
+  border-left: 5px solid #ff00b3;
+  outline: 1px solid #ff00b3;
+}

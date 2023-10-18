@@ -320,23 +320,6 @@ const showResultsPage = function () {
   const url = "./results-page.html";
   localStorage.setItem("globalUserPoint", globalUserPoint);
   window.location.href = url;
-
-  // const questionContainer =
-  //   document.getElementsByClassName("question-container")[0];
-
-  // //console.log(questionContainer);
-
-  // //console.log("SONO QUI");
-  // answersContainer.innerHTML = "";
-  // questionContainer.innerHTML = "";
-  // counterContainer.innerHTML = "";
-  // timerContainer.style.display = "none";
-  // //console.log("HO PULITO");
-
-  // const resultsOfQuiz = document.createElement("div");
-  // resultsOfQuiz.innerHTML = `<h1>Hai finito il quiz con un punteggio di ${globalUserPoint} su 10!</h1>`;
-  // resultsOfQuiz.classList.add("ending-message");
-  // questionContainer.appendChild(resultsOfQuiz);
 };
 
 //spostarsi sulla nuova domanda
@@ -376,8 +359,10 @@ const checkIfTheAnswerIsCorrect = function (element) {
   // console.log(correctAnswer.innerText);
   if (element.innerText === correctAnswer.innerText) {
     globalUserPoint++;
+    sendPositivePopupFeedbackForTheAnswer();
     //console.log("Risposta corretta!");
   } else {
+    sendNegativePopupFeedbackForTheAnswer();
     //console.log("Risposta errata");
   }
   goToNewQuestion();
@@ -388,3 +373,59 @@ answersContainer.addEventListener("click", (e) => {
   selectAnswerAndChangeButtonColor(element);
   checkIfTheAnswerIsCorrect(element);
 });
+
+//EXTRA
+//popup per il feedback sulla risposta corretta o errata
+
+const mainContainer = document.getElementsByClassName("container")[0];
+const alertMessageForAnswer = document.getElementById("alertMessageForAnswer");
+const popupMessage = document.createElement("h5");
+
+const removeShowedPopup = function () {
+  alertMessageForAnswer.style.display = "none";
+};
+
+//resetto il valore display a none
+removeShowedPopup();
+
+//mostro il popup "RISPOSTA CORRETTA" in caso di risposta corretta
+const sendPositivePopupFeedbackForTheAnswer = function () {
+  popupMessage.innerText = "";
+
+  alertMessageForAnswer.classList.remove("wrong-popup");
+  alertMessageForAnswer.classList.add("correct-popup");
+
+  popupMessage.classList.add("popup-text");
+
+  const icon = document.createElement("i");
+  icon.classList.add("far");
+  icon.classList.add("fa-check-circle");
+  popupMessage.innerText = "Risposta Corretta ";
+  popupMessage.appendChild(icon);
+
+  alertMessageForAnswer.appendChild(popupMessage);
+
+  alertMessageForAnswer.style.display = "inline-block";
+  setTimeout(removeShowedPopup, 1500);
+};
+
+//mostro il popup "RISPOSTA ERRATA" in caso di risposta errata
+const sendNegativePopupFeedbackForTheAnswer = function () {
+  popupMessage.innerText = "";
+
+  alertMessageForAnswer.classList.remove("correct-popup");
+  alertMessageForAnswer.classList.add("wrong-popup");
+
+  popupMessage.classList.add("popup-text");
+
+  const icon = document.createElement("i");
+  icon.classList.add("far");
+  icon.classList.add("fa-times-circle");
+  popupMessage.innerText = "Risposta Errata ";
+  popupMessage.appendChild(icon);
+
+  alertMessageForAnswer.appendChild(popupMessage);
+
+  alertMessageForAnswer.style.display = "inline-block";
+  setTimeout(removeShowedPopup, 1500);
+};
