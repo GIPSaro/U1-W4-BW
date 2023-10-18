@@ -49,7 +49,6 @@ nav {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  letter-spacing: 0.6rem;
   height: 50px;
   display: inline-block;
 }
@@ -60,14 +59,14 @@ nav {
 
 .feedback-stars > label::before {
   content: url(./assets/star.svg);
-  margin: 2px;
+  margin: 8px;
   display: inline-block;
   cursor: pointer;
 }
 
 .feedback-stars > label {
-  filter: invert(89%) sepia(87%) saturate(228%) hue-rotate(181deg)
-    brightness(9%) contrast(90%);
+  filter: brightness(33%) invert(77%) sepia(67%) saturate(534%)
+    hue-rotate(173deg) brightness(40%) contrast(297%);
   float: right;
   cursor: pointer;
 }
@@ -121,8 +120,8 @@ nav {
   background-color: #00ffff;
   padding: 15px 45px;
   border: none;
-  box-shadow: 0px 0px 20px 10px #00b7ff9d;
-  font-size: 1rem;
+  box-shadow: 0px 0px 20px 8px #00b7ff9d;
+  font-size: 1.2rem;
   cursor: pointer;
   font-weight: bold;
 }
