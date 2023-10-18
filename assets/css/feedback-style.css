@@ -58,7 +58,7 @@ nav {
 }
 
 .feedback-stars > label::before {
-  content: url(./assets/star.svg);
+  content: url(../star.svg);
   margin: 8px;
   display: inline-block;
   cursor: pointer;

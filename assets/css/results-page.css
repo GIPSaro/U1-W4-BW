@@ -13,13 +13,25 @@ body {
   background-position: center;
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   margin: 2rem;
 }
+
+.container {
+  width: 900px;
+  margin-inline: auto;
+}
+
+.logo {
+  width: 990px;
+  margin-inline: auto;
+}
+
 .logo img {
   width: 160px;
+
+  margin-inline: auto;
 }
 .results {
   font-size: 3.5rem;
@@ -42,18 +54,11 @@ body {
 }
 .correct-result {
   text-align: left;
-  position: relative;
-  top: 75px;
-  left: 10px;
-  padding: 14px;
   margin: 5px;
 }
 .wrong-result {
   text-align: right;
-  position: relative;
   top: -135px;
-  left: 20px;
-  padding: 25px;
   margin: 5px;
 }
 
@@ -66,12 +71,17 @@ body {
 .risp-wrong {
   margin: 0;
 }
+.torta-container {
+  text-align: center;
+}
+
 .torta {
+  display: inline-block;
   text-align: center;
   position: absolute;
-  left: 43%;
-  margin-top: -160px;
-  margin-left: -100px;
+  top: 0;
+  margin-top: 14rem;
+  left: calc(50% - 180px);
   border-radius: 50%;
   background: conic-gradient(#d20094 180deg, #00ffff 180deg);
   height: 360px;
@@ -88,9 +98,8 @@ body {
   background-color: #070c2f;
 }
 .buttomCont {
+  margin-top: 8rem;
   text-align: center;
-  position: relative;
-  top: 57px;
 }
 .rateus {
   padding: 0.7em;
@@ -106,7 +115,14 @@ body {
 }
 
 .contResult {
-  margin: 0px;
+  width: 100%;
+}
+
+.contResult-child {
+  margin-top: 10rem;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
 }
 #torta-testo {
   position: relative;
