@@ -102,9 +102,7 @@ body {
   border: 1.5px solid white;
   box-shadow: 0px 0px 20px 1px #0091ff2c;
   cursor: pointer;
-}
-#you-passed {
-  color: #00ffff;
+  content: url(../feedback-page.html);
 }
 
 .contResult {
@@ -115,7 +113,23 @@ body {
   top: 90px;
 }
 
-#torta-testo p {
+.h3Class {
   position: relative;
-  top: 20px;
+  font-weight: bold;
+}
+
+.h3SecondClass {
+  position: relative;
+  margin-top: 0;
+  color: #00ffff;
+  font-size: 18px;
+}
+.pClass {
+  position: relative;
+  font-weight: lighter;
+  font-size: 14px;
+  width: 50%;
+  margin: auto;
+  padding-top: 2em;
+  color: white;
 }
