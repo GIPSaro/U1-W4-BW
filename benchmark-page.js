@@ -114,6 +114,19 @@ const questions = [
 
 // BUON LAVORO 💪🚀
 
+//EXTRA 3
+async function logMovies() {
+  const response = await fetch(
+    "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium"
+  );
+  const movies = await response.json();
+  console.log(movies);
+}
+
+logMovies();
+
+//FINE EXTRA 3
+
 window.onload = function () {
   appendQuestionToPage(questionInfo);
   startTimer();
