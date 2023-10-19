@@ -24,4 +24,9 @@ window.onload = () => {
       console.log("Checkbox non spuntata");
     }
   });
+
+  proceedButton.addEventListener("click", function () {
+    const url = "./benchmark-page.html";
+    window.location.href = url;
+  });
 };
