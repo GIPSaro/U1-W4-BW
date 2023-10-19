@@ -24,6 +24,15 @@ let angolo = dataWrong * 36;
 let torta = document.querySelector(".torta");
 torta.style.background = `conic-gradient(#d20094 ${angolo}deg , #00ffff ${angolo}deg )`;
 
+const styleSheet = document.styleSheets[0];
+
+console.log(styleSheet);
+for (const rule of styleSheet.cssRules) {
+  if (rule.selectorText === ".torta::before") {
+    rule.style.background = `conic-gradient(#d20094 ${angolo}deg, #00ffff ${angolo}deg )`;
+  }
+}
+
 let result = document.querySelector("#torta-testo");
 function stampaResult(partialValue) {
   if (partialValue >= 60) {
