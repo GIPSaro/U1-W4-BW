@@ -84,7 +84,7 @@ nav {
   cursor: pointer;
 }
 
-.check input {
+/* .check input {
   appearance: none;
   border: 2px solid white;
   width: 16px;
@@ -94,7 +94,53 @@ nav {
 }
 
 .check input:checked {
-  background-color: white;
+  background-color: #d20094;
+  border: 2px solid #d20094;
+} */
+
+#checkboxAcceptance {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+label {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+}
+
+label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+}
+
+label:hover:before {
+  opacity: 0.8;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  left: 6.5px;
+  top: -1.5px;
+  width: 5px;
+  height: 10px;
+  border: solid #d20094;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+input:checked + label:after {
+  opacity: 1;
 }
 
 .clickable-button {
@@ -117,32 +163,4 @@ nav {
 
 .bold {
   font-weight: bold;
-}
-
-#container-feedback {
-  width: 780px;
-  margin-inline: auto;
-  text-align: center;
-}
-
-h1 #container-feedback {
-  font-family: "Outfit", sans-serif;
-  font-size: 60px;
-  font-weight: 400;
-  font-weight: bold;
-}
-
-div .feedback-stars {
-}
-p .feedback-subtitle {
-  font-family: "Outfit", sans-serif;
-  font-size: 0.9rem;
-}
-form {
-  outline: none;
-}
-
-hr {
-  width: 15rem;
-  color: #d20094;
 }
