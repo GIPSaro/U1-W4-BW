@@ -36,32 +36,32 @@ for (const rule of styleSheet.cssRules) {
 let result = document.querySelector("#torta-testo");
 function stampaResult(partialValue) {
   if (partialValue >= 60) {
-    var duration = 15 * 1000;
-    var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    let duration = 15 * 1000;
+    let animationEnd = Date.now() + duration;
+    let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
     function randomInRange(min, max) {
       return Math.random() * (max - min) + min;
     }
 
-    var interval = setInterval(function () {
-      var timeLeft = animationEnd - Date.now();
+    let interval = setInterval(function () {
+      let timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
         return clearInterval(interval);
       }
 
-      var particleCount = 50 * (timeLeft / duration);
+      let particleCount = 50 * (timeLeft / duration);
 
       confetti({
         ...defaults,
         particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
       });
       confetti({
         ...defaults,
         particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
       });
     }, 250);
     let print1 = document.createElement("h3");
