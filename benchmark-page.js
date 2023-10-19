@@ -406,7 +406,7 @@ const sendPositivePopupFeedbackForTheAnswer = function () {
   alertMessageForAnswer.appendChild(popupMessage);
 
   alertMessageForAnswer.style.display = "inline-block";
-  setTimeout(removeShowedPopup, 1500);
+  setTimeout(removeShowedPopup, 1000);
 };
 
 //mostro il popup "RISPOSTA ERRATA" in caso di risposta errata
@@ -427,5 +427,5 @@ const sendNegativePopupFeedbackForTheAnswer = function () {
   alertMessageForAnswer.appendChild(popupMessage);
 
   alertMessageForAnswer.style.display = "inline-block";
-  setTimeout(removeShowedPopup, 1500);
+  setTimeout(removeShowedPopup, 1000);
 };
