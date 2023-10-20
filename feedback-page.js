@@ -1,6 +1,6 @@
 let star = document.querySelectorAll("input:not(#comment)");
 let showValue = document.querySelector("#rating-value");
-let selectedRating = null;
+let selectedRating = 0;
 
 //logica per la selezione delle stelle di valutazione
 for (let i = 0; i < star.length; i++) {
@@ -21,12 +21,13 @@ for (let i = 0; i < star.length; i++) {
 // al tasto invio per il commento salvo il commento
 
 const commentInput = document.getElementById("comment");
-commentInput.addEventListener("keyup", function (event) {
+commentInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     const commentText = commentInput.value.trim();
+    // console.log(commentText);
 
-    if (commentText !== "" && selectedRating) {
+    if (commentText !== "" && selectedRating !== "") {
       //memorizziamo il commento nello storage
       localStorage.setItem("feedbackComment", commentText);
       localStorage.setItem("feedbackRating", selectedRating);

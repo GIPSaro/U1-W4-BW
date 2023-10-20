@@ -8,7 +8,7 @@
 
 body {
   color: white;
-  background-image: url(./U1-W4-BW/assets/bg.jpg);
+  background-image: url(../bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -23,4 +23,12 @@ h1 {
   font-size: 60px;
   font-weight: 400;
   text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.accent-color {
+  color: #d20094;
 }
