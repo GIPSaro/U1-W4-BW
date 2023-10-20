@@ -114,10 +114,6 @@ const questions = [
 
 // BUON LAVORO 💪🚀
 
-window.onload = function () {
-  appendQuestionToPage(questionInfo);
-  startTimer();
-};
 //timer
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -248,14 +244,39 @@ const increaseCounterOfQuestions = function () {
   questionCounter.innerText = questionNumber + 1;
 };
 
+//recupero i dati dal local storage passati dal form della pagina ask-user-page
+const numberOfQuestions = localStorage.getItem("numberOfQuestions");
+console.log(numberOfQuestions);
+
+const difficultyOfQuestions = localStorage.getItem("difficultyValue");
+console.log(difficultyOfQuestions);
+
+const questionsFromFetchArray = [];
+
+//fetcho dinamicamente le domande da un sito e le inserisco in un array
+const fetchQuestions = async function () {
+  const response = await fetch(
+    `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=18&difficulty=${difficultyOfQuestions}`
+  );
+  const questionsFromFetch = await response.json();
+  console.log(questionsFromFetch);
+  for (let i = 0; i < questionsFromFetch.results.length; i++) {
+    questionsFromFetchArray.push(questionsFromFetch.results[i]);
+  }
+  console.log(questionsFromFetchArray);
+  return questionsFromFetchArray;
+};
+
+fetchQuestions();
+
 //pesco l'oggetto contenente la domanda
-const getQuestion = function () {
-  const question = questions[questionNumber];
+const getQuestion = function (questionsFromFetchArray) {
+  const question = questionsFromFetchArray[questionNumber];
   return question;
 };
 
-const questionInfo = getQuestion();
-//console.log(questionInfo);
+const questionInfo = getQuestion(questionsFromFetchArray);
+console.log(questionInfo);
 
 //pesco il contenitore dei counter delle domande
 const counterContainer =
@@ -428,4 +449,9 @@ const sendNegativePopupFeedbackForTheAnswer = function () {
 
   alertMessageForAnswer.style.display = "inline-block";
   setTimeout(removeShowedPopup, 1000);
+};
+
+window.onload = function () {
+  appendQuestionToPage(questionInfo);
+  startTimer();
 };
