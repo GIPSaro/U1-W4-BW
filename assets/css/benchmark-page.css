@@ -149,7 +149,7 @@ header img {
 }
 
 .base-timer__svg {
-  transform: scaleX(-1);
+  transform: scaleX(1);
 }
 
 .base-timer__circle {
@@ -158,23 +158,19 @@ header img {
 }
 
 .base-timer__path-elapsed {
-  stroke-width: 7px;
+  stroke-width: 8px;
   stroke: grey;
   opacity: 0.4;
 }
 
 .base-timer__path-remaining {
-  stroke-width: 7px;
+  stroke-width: 8px;
   stroke-linecap: round;
   transform: rotate(90deg);
   transform-origin: center;
   transition: 1s linear all;
   fill-rule: nonzero;
   stroke: #00ffff;
-}
-
-.base-timer__path-remaining.green {
-  color: rgb(65, 184, 131);
 }
 
 .base-timer__path-remaining.orange {
@@ -211,7 +207,7 @@ header img {
   position: fixed;
   bottom: 2rem;
   animation-name: enterOnPage;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-fill-mode: both;
   animation-direction: normal;
 }

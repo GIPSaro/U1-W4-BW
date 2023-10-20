@@ -1299,7 +1299,7 @@ const sendPositivePopupFeedbackForTheAnswer = function () {
   alertMessageForAnswer.appendChild(popupMessage);
 
   alertMessageForAnswer.style.display = "inline-block";
-  setTimeout(removeShowedPopup, 1000);
+  setTimeout(removeShowedPopup, 2000);
 };
 
 //mostro il popup "RISPOSTA ERRATA" in caso di risposta errata
@@ -1320,7 +1320,7 @@ const sendNegativePopupFeedbackForTheAnswer = function () {
   alertMessageForAnswer.appendChild(popupMessage);
 
   alertMessageForAnswer.style.display = "inline-block";
-  setTimeout(removeShowedPopup, 1000);
+  setTimeout(removeShowedPopup, 2000);
 };
 
 window.onload = function () {
