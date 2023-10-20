@@ -675,12 +675,8 @@ const easyQuestions = [
     difficulty: "easy",
     question:
       "In any programming language, what is the most common way to iterate through an array?",
-    correct_answer: "&#039;For&#039; loops",
-    incorrect_answers: [
-      "&#039;If&#039; Statements",
-      "&#039;Do-while&#039; loops",
-      "&#039;While&#039; loops"
-    ]
+    correct_answer: "'For' loops",
+    incorrect_answers: ["'If' Statements", "'Do-while' loops", "'While' loops"]
   },
   {
     category: "Science: Computers",
@@ -716,7 +712,7 @@ const easyQuestions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "The programming language &#039;Swift&#039; was created to replace what other programming language?",
+      "The programming language 'Swift' was created to replace what other programming language?",
     correct_answer: "Objective-C",
     incorrect_answers: ["C#", "Ruby", "C++"]
   },
@@ -745,7 +741,7 @@ const easyQuestions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"]
   },
@@ -754,7 +750,7 @@ const easyQuestions = [
     type: "boolean",
     difficulty: "easy",
     question:
-      "The programming language &quot;Python&quot; is based off a modified version of &quot;JavaScript&quot;.",
+      "The programming language 'Python' is based off a modified version of 'JavaScript'.",
     correct_answer: "False",
     incorrect_answers: ["True"]
   },
@@ -764,10 +760,10 @@ const easyQuestions = [
     difficulty: "easy",
     question: "What does the Prt Sc button do?",
     correct_answer:
-      "Captures what&#039;s on the screen and copies it to your clipboard",
+      "Captures what's on the screen and copies it to your clipboard",
     incorrect_answers: [
       "Nothing",
-      "Saves a .png file of what&#039;s on the screen in your screenshots folder in photos",
+      "Saves a .png file of what's on the screen in your screenshots folder in photos",
       "Closes all windows"
     ]
   },
@@ -840,7 +836,7 @@ const easyQuestions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In &quot;Hexadecimal&quot;, what color would be displayed from the color code? &quot;#00FF00&quot;?",
+      "In 'Hexadecimal', what color would be displayed from the color code? '#00FF00&'?",
     correct_answer: "Green",
     incorrect_answers: ["Red", "Blue", "Yellow"]
   },
