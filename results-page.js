@@ -7,10 +7,11 @@ const numberOfQuestionsOnHTML = document.querySelectorAll(
 
 let data = globalUserPoint;
 let dataWrong = numberOfQuestions - data;
-if (data == null) {
-  data = 0;
-}
-//console.log(data);
+
+// if (data == null) {
+//   data = 0;
+// }
+// //console.log(data);
 
 function percent(partialValue, totalValue) {
   const percentNotRounded = (partialValue / totalValue) * 100;
@@ -32,7 +33,9 @@ document.getElementById("percWrong").innerHTML =
   percentWrong(data, numberOfQuestions) + "%";
 document.getElementById("numWrong").innerHTML = dataWrong;
 
-//qui bisonga impostare l'angolo del colore del grafico in base al risultato
+console.log(data);
+
+//qui bisogna impostare l'angolo del colore del grafico in base al risultato
 let angolo = dataWrong * (360 / numberOfQuestions);
 let torta = document.querySelector(".torta");
 torta.style.background = `conic-gradient(#d20094 ${angolo}deg , #00ffff ${angolo}deg )`;
@@ -115,4 +118,4 @@ function stampaResult(partialValue) {
     newP.classList.add("pClass");
   }
 }
-stampaResult(percent(data, 10));
+stampaResult(percent(data, numberOfQuestions));

@@ -86,10 +86,6 @@ nav {
     contrast(103%);
 }
 
-.write-open-feedback {
-  margin-top: 3rem;
-}
-
 #comment {
   background-color: transparent;
   border-style: none;
@@ -113,6 +109,10 @@ nav {
   margin-top: 0.5rem;
   margin-left: 3rem;
   margin-right: 2.5rem;
+}
+
+.write-open-feedback input {
+  margin-top: 4rem;
 }
 
 #MoreInfoButton {

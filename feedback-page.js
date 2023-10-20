@@ -9,10 +9,14 @@ for (let i = 0; i < star.length; i++) {
   });
 }
 
+const form = document.getElementById("feedback-comment");
+
 //evitiamo il comportamento di default del form alla pressione del tasto "enter"
 const inputComment = document.getElementById("comment");
 inputComment.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
+    form.reset();
+    showValue.innerText = "";
   }
 });

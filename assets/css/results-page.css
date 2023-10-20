@@ -23,13 +23,14 @@ body {
   margin-inline: auto;
 }
 
-.logo {
-  width: 990px;
+nav {
+  width: 780px;
   margin-inline: auto;
+  margin-top: 2rem;
 }
 
 .logo img {
-  width: 160px;
+  width: 130px;
 
   margin-inline: auto;
 }
