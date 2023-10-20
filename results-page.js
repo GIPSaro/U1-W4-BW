@@ -1,26 +1,39 @@
 const globalUserPoint = localStorage.getItem("globalUserPoint");
+const numberOfQuestions = localStorage.getItem("numberOfQuestions");
+
+const numberOfQuestionsOnHTML = document.querySelectorAll(
+  ".number-of-questions"
+);
 
 let data = globalUserPoint;
-let dataWrong = 10 - data;
+let dataWrong = numberOfQuestions - data;
 if (data == null) {
   data = 0;
 }
 //console.log(data);
 
 function percent(partialValue, totalValue) {
-  return (partialValue / totalValue) * 100;
+  const percentNotRounded = (partialValue / totalValue) * 100;
+  return percentNotRounded.toFixed(2);
 }
 function percentWrong(partialValue, totalValue) {
-  return [(totalValue - partialValue) / totalValue] * 100;
+  const percentNotRounded = [(totalValue - partialValue) / totalValue] * 100;
+  return percentNotRounded.toFixed(2);
 }
 
-document.getElementById("percCorr").innerHTML = percent(data, 10) + "%";
+//inserisco dinamicamente su quante domande corrette e quante sbagliate a video
+numberOfQuestionsOnHTML[0].innerText = numberOfQuestions;
+numberOfQuestionsOnHTML[1].innerText = numberOfQuestions;
+
+document.getElementById("percCorr").innerHTML =
+  percent(data, numberOfQuestions) + "%";
 document.getElementById("numCorr").innerHTML = data;
-document.getElementById("percWrong").innerHTML = percentWrong(data, 10) + "%";
+document.getElementById("percWrong").innerHTML =
+  percentWrong(data, numberOfQuestions) + "%";
 document.getElementById("numWrong").innerHTML = dataWrong;
 
 //qui bisonga impostare l'angolo del colore del grafico in base al risultato
-let angolo = dataWrong * 36;
+let angolo = dataWrong * (360 / numberOfQuestions);
 let torta = document.querySelector(".torta");
 torta.style.background = `conic-gradient(#d20094 ${angolo}deg , #00ffff ${angolo}deg )`;
 

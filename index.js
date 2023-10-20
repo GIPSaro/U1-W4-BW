@@ -26,7 +26,7 @@ window.onload = () => {
   });
 
   proceedButton.addEventListener("click", function () {
-    const url = "./benchmark-page.html";
+    const url = "./ask-user-page.html";
     window.location.href = url;
   });
 };
